@@ -91,7 +91,7 @@ prettyTxOut :: Pl.TxOut -> (Doc ann, Maybe (Doc ann))
 prettyTxOut tout = (prettyAddressTypeAndHash $ Pl.txOutAddress tout, mPrettyValue $ Pl.txOutValue tout)
 
 prettyTypedValidator :: Pl.TypedValidator a -> Doc ann
-prettyTypedValidator = prettyAddressTypeAndHash . Pl.scriptAddress . Pl.validatorScript
+prettyTypedValidator = prettyAddressTypeAndHash . Pl.validatorAddress
 
 prettyDatumVal ::
   (Show (Pl.DatumType a)) =>
